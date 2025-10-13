@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduLift – Crește-ți cunoștințele cu [Numele Tău]</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #222;
+      background: #f9fafb;
+    }
+
+    /* 🔥 FUNDAL HERO CU GRADIENT ANIMAT + OVERLAY */
+    header {
+      position: relative;
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(-45deg, #0077ff, #6a11cb, #2575fc, #00c6ff);
+      background-size: 400% 400%;
+      animation: gradientShift 10s ease infinite;
+      z-index: -2;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.35);
+      backdrop-filter: blur(2px);
+      z-index: -1;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .cta-btn {
+      background: white;
+      color: #0077ff;
+      padding: 15px 35px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      background: #0077ff;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    section {
+      padding: 70px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #111;
+    }
+
+    .about, .courses, .testimonials, .newsletter {
+      text-align: center;
+    }
+
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .course-card {
+      background: white;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .course-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.12);
+    }
+
+    .course-card img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .newsletter input[type="email"] {
+      padding: 12px;
+      width: 260px;
+      border: 1px solid #ccc;
+      border-radius: 30px;
+      margin-right: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      background: #0f172a;
+      color: #eee;
+    }
+
+    footer a {
+      color: #00c6ff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Învață informatica cu ușurință</h1>
+    <p>Transformă-ți pasiunea în abilități reale cu cursurile mele interactive.</p>
+    <a href="#courses" class="cta-btn">Vezi cursurile</a>
+  </header>
+
+  <section class="about">
+    <h2>Despre mine</h2>
+    <p>Sunt Gabriel, trainer cu peste 5 ani experiență în informatica.  
+       Am ajutat peste 100 de oameni să-și atingă obiectivele prin metode simple și eficiente.</p>
+  </section>
+
+  <section id="courses" class="courses">
+    <h2>Cursurile mele populare</h2>
+    <div class="courses-grid">
+      <div class="course-card">
+        <img src="curs1.jpg" alt="Curs 1">
+        <h3>Introducere în Informatica</h3>
+        <p>Învață pas cu pas conceptele esențiale și aplică-le imediat.</p>
+        <a href="#" class="cta-btn">Detalii curs</a>
+      </div>
+      <div class="course-card">
+        <img src="curs2.jpg" alt="Curs 2">
+        <h3>[Tema cursului 2]</h3>
+        <p>Dezvoltă-ți abilitățile cu exerciții practice și studii de caz.</p>
+        <a href="#" class="cta-btn">Detalii curs</a>
+      </div>
+      <div class="course-card">
+        <img src="curs3.jpg" alt="Curs 3">
+        <h3>[Tema cursului 3]</h3>
+        <p>Perfecționează-te cu tehnici avansate și feedback personalizat.</p>
+        <a href="#" class="cta-btn">Detalii curs</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h2>Ce spun cursanții mei</h2>
+    <blockquote>„Un curs excelent! Explicațiile sunt clare și aplicabile.” – <strong>Andrei P.</strong></blockquote>
+    <blockquote>„Am învățat mai mult în 2 săptămâni decât în 6 luni singură!” – <strong>Maria D.</strong></blockquote>
+  </section>
+
+  <section class="newsletter">
+    <h2>Primește gratuit 3 lecții bonus</h2>
+    <p>Abonează-te și începe să înveți chiar azi.</p>
+    <form>
+      <input type="email" placeholder="Adresa ta de email">
+      <button class="cta-btn" type="submit">Trimite</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 EduLift · Toate drepturile rezervate · <a href="#">Politica de confidențialitate</a></p>
+  </footer>
+
+</body>
+</html>
