@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- Definim tipul documentului HTML5 -->
+<html lang="ro">
+<!-- Setăm limba paginii în română -->
+<head>
+  <meta charset="UTF-8">
+  <!-- Setăm codificarea caracterelor la UTF-8 (suport pentru diacritice) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Asigurăm responsive design pe mobil -->
+  <title>Contact</title>
+  <!-- Titlul paginii care apare în fila browserului -->
+</head>
+<body>
+
+  <!-- Titlu principal al paginii -->
+  <h2>Contactează-ne</h2>
+
+  <!-- Formularul de contact -->
+  <form id="contactForm">
+    <!-- Eticheta pentru câmpul de nume -->
+    <label for="name">Nume:</label><br>
+    <!-- Input pentru nume, câmp obligatoriu -->
+    <input type="text" id="name" name="name" required><br><br>
+
+    <!-- Eticheta pentru câmpul de email -->
+    <label for="email">Email:</label><br>
+    <!-- Input pentru email, validare automată și obligatoriu -->
+    <input type="email" id="email" name="email" required><br><br>
+
+    <!-- Eticheta pentru câmpul de mesaj -->
+    <label for="message">Mesaj:</label><br>
+    <!-- Textarea pentru mesajul utilizatorului, obligatoriu -->
+    <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+    <!-- Buton pentru trimiterea formularului -->
+    <button type="submit">Trimite</button>
+  </form>
+
+  <!-- Mesajul de succes, ascuns inițial -->
+  <p id="successMsg" style="color:green; display:none;">Mesaj trimis cu succes!</p>
+
+   <!-- Link-uri rețele sociale -->
+  <h3>Urmărește-ne:</h3>
+  <ul>
+    <li><a href="https://www.facebook.com/gabriel.ciuca.10/" target="_blank">Facebook</a></li>
+
+  </ul>
