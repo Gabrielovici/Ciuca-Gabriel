@@ -1,0 +1,145 @@
+/* =======================================================
+   programExcursie.css
+   Stilizare pentru pagina „Programul excursiei la munte”
+   ======================================================= */
+
+/* ---------- Variabile CSS globale ---------- */
+:root {
+  --primary: #0b7285;        /* Culoare principală (turcoaz închis) */
+  --primary-weak: #e3fafc;   /* Fundal ușor pentru hover */
+  --muted-row: #f8f9fa;      /* Culoare pentru rândurile pare din tabel */
+  --border: #d0d7de;         /* Culoare borduri */
+  --text: #0f172a;           /* Culoare text */
+}
+
+/* Elimină efectele implicite și setează modelul de box */
+* { box-sizing: border-box; }
+
+/* ---------- Corpul paginii ---------- */
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  margin: 0;
+  background: #ffffff;
+}
+
+/* Clasă de container folosită pentru centrare și margini laterale */
+.container {
+  width: min(1100px, 92vw);   /* maxim 1100px sau 92% din lățimea ferestrei */
+  margin-inline: auto;        /* centrează pe orizontală */
+  padding: 1rem;
+}
+
+/* ---------- Titlul principal ---------- */
+/* ---------- Titlul principal ---------- */
+.page-title {
+  text-align: center;
+  margin: 1rem 0 1.2rem;
+  font-size: clamp(2rem, 4vw, 3rem);     /* mărime dinamică pe ecran */
+  font-weight: 800;                      /* mai gros */
+  letter-spacing: 0.05em;                /* spațiu între litere */
+  text-transform: uppercase;             /* majuscule elegante */
+  
+  /* Efect gradient pe text */
+  background: linear-gradient(90deg, #0b7285, #4dabf7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Umbră subtilă pentru contrast */
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- Subtitlul de sub titlu ---------- */
+.subtitle {
+  text-align: center;                     /* aliniază la centru */
+  font-family: clamp(2rem, 4vw, 3rem);  
+  font-size: clamp(1.2rem, 2.3vw, 1.6rem); /* scalare automată pe ecrane mici */
+  font-weight: 600;
+  color: #8b5a2b;                         /* maro cald */
+  margin-top: 0.2rem;
+  margin-bottom: 1.8rem;
+  letter-spacing: 0.03em;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.1); /* umbră subtilă pentru contrast */
+}
+
+
+
+/* ---------- Imaginea principală ---------- */
+.hero {
+  display: block;
+  margin: 1rem auto 2rem;          /* centrează imaginea */
+  width: 40%;
+  height: auto;
+  border-radius: 16px;             /* colțuri rotunjite */
+  box-shadow: 0 6px 22px rgba(2, 18, 31, 0.12); /* umbră discretă */
+  object-fit: cover;
+}
+
+/* ---------- Tabelul cu programul excursiei ---------- */
+table.program {
+  width: 100%;
+  border-collapse: collapse;   /* elimină spațiile dintre borduri */
+  margin: 0 auto 1.25rem;
+}
+/* Variante „fun” pentru tabel */
+.program-fun thead th {
+  background: linear-gradient(90deg, #0b7285, #4dabf7);
+}
+
+.program-fun tbody tr:hover {
+  transform: scale(1.01);
+  transition: transform 120ms ease, background 160ms ease-in-out;
+}
+
+/* Colțuri rotunjite doar pe exterior (mai card-like) */
+.program-fun {
+  border-radius: 14px;
+  overflow: hidden; /* păstrează colțurile și pentru header */
+}
+
+/* Prima coloană mai „tare”, ca timeline */
+.program-fun td:first-child {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Notele să fie mai aerisite și ușor italice */
+.program-fun td:last-child {
+  font-style: italic;
+  opacity: 0.95;
+}
+
+
+/* Antetul tabelului */
+.program thead th {
+  background: var(--primary);
+  color: #fff;
+  text-align: left;
+}
+
+/* Celulele tabelului (antet + conținut) */
+.program th,
+.program td {
+  border: 1px solid var(--border);
+  padding: 0.75rem 0.85rem;
+}
+
+/* Colorează alternativ rândurile pare */
+.program tbody tr:nth-child(even) {
+  background: var(--muted-row);
+}
+
+/* Efect la trecerea cu mouse-ul peste un rând */
+.program tbody tr:hover {
+  background: var(--primary-weak);
+  transition: background 160ms ease-in-out;
+}
+
+/* ---------- Paragraful final ---------- */
+.note {
+  max-width: 72ch;           /* limitează lățimea la 72 de caractere */
+  margin: 0 auto 2rem;       /* centrează și adaugă spațiu dedesubt */
+  font-size: 1.05rem;
+  text-align: center;
+}

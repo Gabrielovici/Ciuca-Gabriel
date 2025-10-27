@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formular de înregistrare animale</title>
+
+  <!-- Legătură către fișierul CSS -->
+  <link rel="stylesheet" href="inregistrareAnimale.css" />
+</head>
+<body>
+  <!-- ====== Wrapper pentru centrare verticală/orizontală ====== -->
+  <main class="wrap">
+    <!-- Card alb cu umbră: conține formularul -->
+    <form class="card" action="#" method="post" novalidate>
+        <img class="pet-logo"
+     src="d:\Lab2TW\Adapost\how-to-draw-a-puppy-featured-image-1200.webp"
+     alt="Iconiță lăbuță" />
+
+      <!-- Titlu + descriere scurtă -->
+      <h1>Formular de înregistrare animale</h1>
+      <p class="intro">
+        Completați datele de mai jos pentru înregistrarea animalului la clinică.
+      </p>
+
+      <!-- ========== Date stăpân ========== -->
+      <div class="field">
+        <label for="numeStapan">Nume stăpân</label>
+        <input id="numeStapan" name="numeStapan" type="text"
+               placeholder="Ex: Popescu Ana" required />
+        <small class="hint">Introduceți numele complet.</small>
+      </div>
+
+      <div class="field">
+        <label for="telefon">Telefon</label>
+        <input id="telefon" name="telefon" type="tel"
+               placeholder="Ex: 07xx xxx xxx" required />
+        <small class="hint">Vom folosi acest număr pentru confirmare.</small>
+      </div>
+
+      <!-- ========== Date animal ========== -->
+      <div class="field">
+        <label for="numeAnimal">Nume animal</label>
+        <input id="numeAnimal" name="numeAnimal" type="text"
+               placeholder="Ex: Luna" required />
+      </div>
+
+      <div class="field">
+        <label for="specie">Specie</label>
+        <select id="specie" name="specie" required>
+          <option value="">Selectează...</option>
+          <option value="Caine">Câine</option>
+          <option value="Pisica">Pisică</option>
+          <option value="Iepure">Iepure</option>
+          <option value="Altul">Altul</option>
+        </select>
+      </div>
+
+      <fieldset class="field">
+        <legend>Sexul animalului</legend>
+        <label class="inline">
+          <input type="radio" name="sex" value="Mascul" required />
+          Mascul
+        </label>
+        <label class="inline">
+          <input type="radio" name="sex" value="Femela" />
+          Femelă
+        </label>
+      </fieldset>
+
+      <fieldset class="field">
+        <legend>Servicii dorite</legend>
+        <label class="inline">
+          <input type="checkbox" name="servicii" value="Vaccinare" />
+          Vaccinare
+        </label>
+        <label class="inline">
+          <input type="checkbox" name="servicii" value="Deparazitare" />
+          Deparazitare
+        </label>
+        <label class="inline">
+          <input type="checkbox" name="servicii" value="Consult" />
+          Consult
+        </label>
+      </fieldset>
+
+      <div class="field">
+        <label for="observatii">Observații</label>
+        <textarea id="observatii" name="observatii" rows="4"
+                  placeholder="Alergii, preferințe, comportament etc."></textarea>
+      </div>
+
+      <!-- Acțiuni: buton principal + reset -->
+      <div class="actions">
+        <button class="btn primary" type="submit">Trimite</button>
+        <button class="btn ghost" type="reset">Resetează</button>
+      </div>
+    </form>
+    
+  </main>
+</body>
+</html>

@@ -1,0 +1,166 @@
+/* ======================================================
+   inregistrareAnimale.css
+   - formular centrat (pe verticală/orizontală)
+   - card alb cu umbră
+   - spațieri consistente
+   - butoane colorate + hover
+   - focus vizibil pe câmpuri
+   ====================================================== */
+
+/* Variabile pentru culori */
+:root{
+  --primary: #2563eb;        /* albastru buton principal */
+  --primary-hover: #1d4ed8;  /* nuanță mai închisă la hover */
+  --focus: #0ea5e9;          /* azuriu pentru contur focus */
+  --border: #d0d7de;         /* gri borduri */
+  --ghost: #0f172a;          /* aproape negru pentru buton ghost */
+  --bg: #f3f4f6;             /* gri deschis pentru fundal pagină */
+  --text: #0f172a;           /* culoare text */
+  --muted: #64748b;          /* text explicativ / hint */
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body{
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ====== Centrare conținut ====== */
+.wrap{
+  min-height: 100%;
+  display: grid;
+  place-items: center;   /* centrează vertical + orizontal */
+  padding: 2rem;
+}
+
+/* ====== Card alb cu umbră ====== */
+.card{
+  width: min(680px, 92vw);
+  background: #fff;
+  border: 1px solid rgba(2,18,31,0.06);
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(2,18,31,0.10);
+  padding: 1.2rem clamp(1rem, 3vw, 2rem) 1.6rem;
+}
+
+/* Titlu + intro */
+.card > h1{
+  margin: 0.25rem 0 0.25rem;
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+}
+
+.intro{
+  margin: 0 0 1rem;
+  color: var(--muted);
+}
+
+/* ====== Câmpuri cu spațieri consistente ====== */
+.field{
+  display: grid;
+  gap: 0.45rem;
+  margin: 0.8rem 0;
+}
+
+label{
+  font-weight: 600;
+}
+
+.hint{
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Inputuri de bază */
+input[type="text"],
+input[type="tel"],
+select,
+textarea{
+  padding: 0.6rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font: inherit;
+  background: #fff;
+}
+
+/* ====== Focus vizibil pe câmpuri ====== */
+input[type="text"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus{
+  outline: none;
+  border-color: var(--focus);
+  box-shadow: 0 0 0 3px rgba(14,165,233,0.15); /* inel discret */
+  transition: border-color 140ms ease, box-shadow 140ms ease;
+}
+
+/* Fieldset-uri: grupare radio/checkbox */
+fieldset.field{
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  padding: 0.65rem 0.75rem 0.9rem;
+}
+
+legend{
+  padding: 0 0.3rem;
+  font-weight: 700;
+}
+
+.inline{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-right: 1rem;
+  margin-top: 0.35rem;
+}
+
+/* ====== Acțiuni (butoane) ====== */
+.actions{
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.btn{
+  appearance: none;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 0.6rem 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 120ms ease, background 140ms ease, border-color 140ms ease;
+}
+
+.btn:active{ transform: translateY(1px); }
+
+.btn.primary{
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn.primary:hover{
+  background: var(--primary-hover);
+}
+
+.btn.ghost{
+  background: transparent;
+  border-color: var(--ghost);
+  color: var(--ghost);
+}
+
+.btn.ghost:hover{
+  background: rgba(15,23,42,0.08);
+}
+
+/* Imaginea mică deasupra titlului */
+.pet-logo {
+  display: block;
+  width: 100px;           /* mărime mică */
+  height: auto;
+  margin: 0 auto 0.5rem; /* centru + spațiu sub ea */
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
+}
