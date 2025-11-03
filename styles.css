@@ -1,0 +1,293 @@
+/* ============================================================
+   NeuroCAD — Tema JetBrains simplificată + buton "Mergi sus"
+   - Dark modern
+   - Fără sticky, fără fade
+   - Carduri, grid, responsive
+   - Rapid, clar, elegant
+============================================================ */
+
+/* ===== Variabile ===== */
+:root{
+  --bg:#0b1220; --alt:#0d1624; --surface:#0f172a; --card:#111827;
+  --fg:#eef2ff; --muted:#9aa4bf; --brand:#7c3aed; --accent:#a78bfa;
+  --border:rgba(255,255,255,.10);
+  --r:12px; --r-lg:16px; --pad:18px; --shadow:0 6px 18px rgba(0,0,0,.25);
+  --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Inter", Arial, sans-serif;
+}
+
+/* ===== Bază ===== */
+*{box-sizing:border-box}
+html,body{
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  font-family:var(--font);
+  line-height:1.6;
+  scroll-behavior:smooth;
+}
+img{max-width:100%;height:auto;display:block;margin:0 auto}
+a{color:inherit;text-decoration:none}
+.container{max-width:1150px;margin:0 auto;padding:0 20px}
+.small{font-size:14px;color:var(--muted)}
+
+/* ===== Layout (GRID) ===== */
+.layout{
+  display:grid;
+  gap:16px;
+  min-height:100vh;
+  grid-template-columns:240px 1fr;
+  grid-template-rows:auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "nav    main"
+    "aside  main"
+    "footer footer";
+  background:linear-gradient(180deg,#0b1220,#0c1427);
+}
+
+.site-header{grid-area:header}
+.site-nav{grid-area:nav}
+.site-aside{grid-area:aside}
+main{grid-area:main}
+.site-footer{
+  grid-area:footer;
+  border-top:1px solid var(--border);
+  text-align:center;
+  padding:22px 0;
+  color:var(--muted);
+}
+
+/* ===== Header ===== */
+.site-header .nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px 0;
+  border-bottom:1px solid var(--border);
+  background:#0b1220;
+}
+.logo{font-weight:900;letter-spacing:.3px}
+.logo span{color:var(--brand)}
+nav a{margin-left:16px;color:var(--muted);position:relative;transition:color .2s}
+nav a:hover{color:#fff}
+nav a::after{
+  content:"";
+  position:absolute;
+  left:0;bottom:-6px;
+  width:0%;height:2px;
+  background:linear-gradient(90deg,var(--brand),#9333ea);
+  transition:width .25s ease;
+}
+nav a:hover::after{width:100%}
+
+/* ===== Butoane ===== */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 16px;
+  border-radius:var(--r);
+  border:1px solid var(--border);
+  cursor:pointer;
+  gap:8px;
+  transition:transform .15s,background .15s,border-color .15s;
+}
+.btn.primary{
+  background:var(--brand);
+  color:#fff;
+  border-color:transparent;
+  box-shadow:var(--shadow);
+}
+.btn.primary:hover{transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:#fff}
+.btn.ghost:hover{background:rgba(255,255,255,.06)}
+
+/* ===== Side nav + aside ===== */
+.panel{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--r-lg);
+  padding:14px;
+  box-shadow:var(--shadow);
+}
+.site-nav{align-self:start}
+.site-aside{align-self:start}
+.site-nav h4{margin:0 0 8px;color:#c7d2fe;font-size:13px;text-transform:uppercase}
+.site-nav a{
+  display:block;
+  padding:10px;
+  border-radius:10px;
+  color:var(--muted);
+}
+.site-nav a:hover{background:rgba(255,255,255,.05);color:#fff}
+.chip{
+  display:inline-block;
+  border-radius:999px;
+  padding:6px 10px;
+  font-size:12px;
+  background:rgba(124,58,237,.18);
+  color:#d6bcfa;
+  border:1px solid var(--border);
+}
+
+/* ===== Secțiuni ===== */
+.section{padding:56px 0}
+.section.alt{background:var(--alt)}
+.center{text-align:center}
+.two-col{display:grid;grid-template-columns:1.7fr 1fr;gap:22px}
+
+/* ===== Hero ===== */
+.hero{
+  padding:54px 0 24px;
+  text-align:center;
+}
+.hero h1{
+  margin:0 0 10px;
+  font-size:clamp(32px,4.4vw,44px);
+  font-weight:900;
+}
+.hero h1 span{
+  background:linear-gradient(90deg,var(--brand),#9333ea);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.hero p{
+  max-width:760px;
+  margin:0 auto 18px;
+  color:var(--muted);
+}
+.cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* ===== Carduri ===== */
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--r-lg);
+  padding:var(--pad);
+  box-shadow:var(--shadow);
+  transition:transform .18s,box-shadow .18s;
+}
+.card:hover{transform:translateY(-3px)}
+.flex-cards{display:flex;gap:18px;flex-wrap:wrap}
+.flex-cards .card{flex:1 1 280px}
+
+/* ===== Typo helpers ===== */
+.subtitle{margin-top:16px;color:var(--accent);font-weight:800}
+.bullets{list-style:none;padding-left:0;margin:12px 0}
+.bullets li{position:relative;padding-left:22px;margin:8px 0}
+.bullets li::before{content:"•";position:absolute;left:6px;color:var(--accent)}
+
+/* ===== Tabele ===== */
+.table-wrap{overflow:auto;border:1px solid var(--border);border-radius:14px}
+.pro-table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:720px;
+  background:var(--surface);
+}
+.pro-table thead th{
+  text-align:left;
+  font-weight:800;
+  padding:12px;
+  background:#101830;
+  border-bottom:1px solid var(--border);
+}
+.pro-table tbody td{
+  padding:12px;
+  border-bottom:1px solid var(--border);
+}
+.pro-table tbody tr:nth-child(even){background:rgba(255,255,255,.02)}
+.pro-table tbody tr:hover{background:#0e1a36}
+
+/* ===== Formulare ===== */
+.contact-form .row{display:grid;gap:6px}
+.contact-form label{color:var(--muted);font-size:14px}
+input,select,textarea{
+  width:100%;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:#0c1529;
+  color:#fff;
+  padding:11px 12px;
+  transition:border-color .15s,box-shadow .15s;
+}
+input::placeholder,textarea::placeholder{color:#7a85a5}
+input:focus,select:focus,textarea:focus{
+  outline:none;
+  border-color:var(--brand);
+  box-shadow:0 0 0 3px rgba(124,58,237,.25);
+}
+.actions{display:flex;gap:10px;margin-top:12px}
+
+/* ===== Buton "Mergi sus" ===== */
+.back-to-top{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:60;
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  font-size:20px;
+  background:var(--brand);
+  color:#fff;
+  box-shadow:var(--shadow);
+  transform:translateY(10px);
+  opacity:0;
+  pointer-events:none;
+  transition:transform .2s,opacity .2s,background .2s;
+}
+.back-to-top.show{
+  transform:translateY(0);
+  opacity:1;
+  pointer-events:auto;
+}
+.back-to-top:hover{
+  background:#9b5eff;
+}
+
+/* ===== Responsive ===== */
+@media (max-width:1050px){.two-col{grid-template-columns:1fr}}
+@media (max-width:900px){
+  .layout{
+    grid-template-columns:1fr;
+    grid-template-areas:
+      "header"
+      "nav"
+      "aside"
+      "main"
+      "footer";
+  }
+  .hero h1{font-size:clamp(28px,6.5vw,36px)}
+  .flex-cards{flex-direction:column}
+  .pro-table{min-width:0}
+  .pro-table thead{display:none}
+  .pro-table tbody tr{
+    display:block;
+    background:var(--surface);
+    margin:12px;
+    border:1px solid var(--border);
+    border-radius:12px;
+    overflow:hidden;
+  }
+  .pro-table tbody td{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    padding:10px 14px;
+    border-bottom:1px dashed var(--border);
+  }
+  .pro-table tbody td:last-child{border-bottom:none}
+  .pro-table tbody td::before{
+    content:attr(data-col);
+    flex:0 0 42%;
+    max-width:200px;
+    color:var(--muted);
+    font-weight:700;
+  }
+}
+  
