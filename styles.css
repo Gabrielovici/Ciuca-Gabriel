@@ -290,4 +290,223 @@ input:focus,select:focus,textarea:focus{
     font-weight:700;
   }
 }
-  
+
+/* ===== Fundal video pentru HERO ===== */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 90px 0 70px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-video-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* ===== Fundal video responsive pentru HERO ===== */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0 80px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  min-height: 70vh; /* se întinde frumos pe ecran */
+}
+
+.hero-video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.hero-video-bg video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;        /* asigură centrare și acoperire completă */
+  transform: translate(-50%, -50%); /* centrează perfect video-ul */
+  filter: brightness(0.55); /* mic efect pentru text lizibil */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: clamp(32px, 4.2vw, 48px);
+  margin-bottom: 12px;
+}
+.hero-content p {
+  max-width: 780px;
+  margin: 0 auto 22px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+/* ======== STIL GENERAL ======== */
+:root {
+  --bg: #0b1220;
+  --text: #ddd;
+  --muted: #999;
+  --brand: #9333ea;
+  --border: #222;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  color: white;
+  font-weight: 600;
+}
+
+a {
+  color: var(--brand);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ======== NAVBAR ======== */
+.logo {
+  font-weight: 700;
+  color: white;
+  font-size: 1.4rem;
+}
+.logo span {
+  color: var(--brand);
+}
+
+nav a {
+  color: #ccc;
+  margin-left: 20px;
+  transition: color .2s ease;
+}
+nav a:hover {
+  color: white;
+}
+
+/* ======== SECTIONS ======== */
+.section {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--border);
+}
+.section.alt {
+  background: #111730;
+}
+.section h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* ======== CONTAINER ======== */
+.container {
+  width: 85%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ======== CARDURI ======== */
+.card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 25px;
+  margin: 15px 0;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+/* ======== LISTE ======== */
+ul {
+  list-style: none;
+  padding: 0;
+}
+ul li {
+  margin: 8px 0;
+  padding-left: 22px;
+  position: relative;
+}
+ul li::before {
+  content: "•";
+  color: var(--brand);
+  position: absolute;
+  left: 0;
+}
+
+/* ======== CTA (Highlight Section) ======== */
+.section.highlight {
+  background: linear-gradient(135deg, #2a175a 0%, #100725 100%);
+  text-align: center;
+}
+.section.highlight p {
+  color: #ccc;
+}
+
+/* ======== FOOTER ======== */
+.site-footer {
+  text-align: center;
+  padding: 25px 0;
+  border-top: 1px solid var(--border);
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* ======== ANIMATII GLOBALE ======== */
+.fade-in {
+  animation: fadeInUp 0.8s ease both;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ======== MEDIA QUERY ======== */
+@media (max-width: 768px) {
+  .container {
+    width: 92%;
+  }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  nav a {
+    margin: 8px;
+  }
+  .section {
+    padding: 60px 0;
+  }
+}
+
