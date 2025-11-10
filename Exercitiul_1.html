@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercitiul 1 - JavaScript</title>
+</head>
+<body>
+    <h2>Exercițiul 1 - JavaScript</h2>
+    <p>Deschide consola (Inspect → Console) pentru a vedea rezultatele.</p>
+
+    <script>
+        // 1. Creăm variabilele cerute
+        let myName = "Gabriel";
+        let mySurname = "Ciuca";
+        let myAge = 21;
+        let studyYear = 3;
+        let myHobby = "informatica";
+
+        // 2. Modificăm valoarea vârstei la 24 folosind operatorul +=
+        myAge += 3; 
+
+        // 3. Afișăm în consolă textul complet folosind concatenarea (+)
+        console.log("Buna! Ma numesc " + myName + " " + mySurname + 
+                    " și am " + myAge + " ani. Sunt la Universitatea Politehnica Bucuresti, în anul " + 
+                    studyYear + ". Unul dintre hobby-urile mele este " + myHobby + ".");
+
+        // 4. Afișăm același text folosind placeholders (template literals)
+        console.log(`Buna! Ma numesc ${myName} ${mySurname} și am ${myAge} ani. 
+Sunt la Universitatea Politehnica Bucuresti, în anul ${studyYear}. 
+Unul dintre hobby-urile mele este ${myHobby}.`);
+
+        // 5. Afișăm tipurile variabilelor
+        console.log("Tipul lui myName este:", typeof myName);
+        console.log("Tipul lui myAge este:", typeof myAge);
+        console.log("Tipul lui myHobby este:", typeof myHobby);
+    </script>
+</body>
+</html>
