@@ -510,3 +510,69 @@ ul li::before {
   }
 }
 
+/* === IMAGINE SECȚIUNEA DESPRE === */
+.image-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-box img {
+  width: 100%;
+  max-width: 430px;
+  border-radius: 18px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.45);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.image-box img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 16px 55px rgba(0,0,0,0.55);
+}
+
+/* ===== HERO VIDEO BACKGROUND ===== */
+.hero {
+  position: relative;
+  height: 86vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Videoclipul */
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  filter: brightness(65%);
+}
+
+/* Stratul de întunecare (overlay) */
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(6, 6, 20, 0.35),
+    rgba(6, 6, 25, 0.75)
+  );
+}
+
+/* Textul din HERO */
+.hero-content {
+  position: relative;
+  z-index: 5;
+  max-width: 820px;
+  animation: fadeIn 1s ease both;
+}
+
+/* Animație fină */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
