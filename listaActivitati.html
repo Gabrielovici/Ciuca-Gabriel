@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista mea de activități</title>
+
+    <!-- Legăm fișierul CSS extern -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Lista mea de activități</h1>
+    <p>Introdu o activitate în câmpul de mai jos și apasă pe „Adaugă activitate”.</p>
+
+    <!-- Container tip „card” -->
+    <div class="card">
+        <input 
+            type="text" 
+            id="inputActivitate" 
+            placeholder="Ex: Învăț la Tehnologii Web">
+        <button id="btnAdauga">Adaugă activitate</button>
+
+        <!-- Lista în care vom introduce <li>-urile -->
+        <ul id="listaActivitati"></ul>
+    </div>
+
+    <!-- Legăm fișierul JS extern -->
+    <script src="script.js"></script>
+</body>
+</html>
